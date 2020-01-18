@@ -63,7 +63,7 @@ ffmpeg支持对输入的音频或视频进行各种各样的处理或变换，�
 ## 命令行剖析
 ```plaintext
 ffmpeg
-	-f h264 -i video.h264                   # 从video.h264文件中读取，封装形式为h264
+    -f h264 -i video.h264                   # 从video.h264文件中读取，封装形式为h264
     -f s16le -ar 8000 -ac 1 -i audio.pcm    # 从audio.pcm文件中读取，PCM_S16LE编码，8000采样，单声道
     -vcodec copy                            # 视频编码直接复制
     -acodec aac                             # 音频编码为AAC
