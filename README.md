@@ -65,11 +65,14 @@ ffmpeg支持对输入的音频或视频进行各种各样的处理或变换，�
 ffmpeg
     -f h264 -i video.h264                   # 从video.h264文件中读取，封装形式为h264
     -f s16le -ar 8000 -ac 1 -i audio.pcm    # 从audio.pcm文件中读取，PCM_S16LE编码，8000采样，单声道
+    
     -vcodec copy                            # 视频编码直接复制
     -acodec aac                             # 音频编码为AAC
     -f flv                                  # 封装形式flv
     output.flv                              # 输出至目标文件output.flv中去
 ```
+ffmpeg使用参数`-i`来标识输入源，输出没有前置参数，在输入前的参数是用于描述输入的，在输出前的参数是为了修饰输出要求的，所以比如我们要从TCP连接中或是从stdin中读取数据时，一般需要明确声明输入的数据封装形式，比如：`ffmpeg -f h264 -i tcp://localhost:1234...`。
+
 
 ## 其它
 ### 设备
